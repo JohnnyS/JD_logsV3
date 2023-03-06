@@ -1,0 +1,16 @@
+{
+  "name": "jd_logsv3",
+  "version": "1.0.0",
+  "description": "JD_logs version 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JokeDevil",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "JokeDevil/discord.js#cfx/13.x",
+    "fn": "^0.2.0",
+    "glob": "^7.1.7"
+  }
+}

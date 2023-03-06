@@ -1,0 +1,66 @@
+{
+    "join": {
+        "msg": "**{name}** is connecting to the server",
+        "update": "Checking Discord Timeout Status",
+        "deny": "Connection denied for **{name}**\n**Reason:** `Discord Timeout`\n**Expire:** {expire}",
+        "timeout": "⛔ Connection Denied\nWhile you have a timeout on discord you can not join our server.\nExpires in `{expire}`"
+    },
+    "leave": {
+        "msg": "**{name}** has left the server.\n**Reason:** `{reason}`"
+    },
+    "chat": {
+        "msg": "**{name}:** `{msg}`"
+    },
+    "resource": {
+        "start_msg": "**{resource}** has been started.",
+        "stop_msg": "**{resource}** has been stopped."
+    },
+    "explosion": {
+        "msg": "**{name}** has created a explosion.\n**Type:** `{type}`"
+    },
+    "shooting": {
+        "msg": "**{name}** fired a `{weapon}` `{count} times`",
+        "undefined": "Undefined"
+    },
+    "damage": {
+        "msg": "**{name}** Has been damaged by `{type}` and lost `{health}` health",
+        "type": {
+            "ai": "AI",
+            "ai_veh": "AI (Vehicle)",
+            "player": "{name}",
+            "player_veh": "{name} (Vehicle)",
+            "veh": "a vehicle",
+            "obj": "a object",
+            "self": "themself"
+        }
+    },
+    "nameChange": {
+        "msg": "**Name Change Detected**\n`{old_name}` :arrow_right: `{new_name}`",
+        "game_msg": "Name Change Detected `{old_name}` -> `{new_name}`"
+    },
+    "death": {
+        "suicide": {
+            "weapon": "**{name}** `committed suicide` (*{type}* - *{weapon}*)",
+            "event": "**{name}** `committed suicide` (*{type}*)",
+            "player": "**{name}** `committed suicide`"
+        },
+        "ai": {
+            "weapon": "**{name}** has been `{type}` (*{weapon}*) by **AI**",
+            "event": "**{name}** has been `{type}` by **AI**",
+            "other": "**{name}** has been `Killed` by **AI**"
+        },
+        "player": {
+            "weapon": "**{name}** has been `{type}` (*{weapon}*) by **{killer}**",
+            "event": "**{name}** has been `{type}` by **{killer}**",
+            "other": "**{name}** has been `Killed` by **{killer}**"
+        },
+        "unknown": {
+            "weapon": "**{name}** has been `{type}` (*{weapon}*) by **Unknown**",
+            "event": "**{name}** has been `{type}` by **Unknown**",
+            "other": "**{name}** has been `Killed` by **Unknown**"
+        }
+    },
+    "permission": {
+        "msg": "Permissions/Groups added to **{name}**"
+    }
+}

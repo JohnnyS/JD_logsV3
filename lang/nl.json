@@ -1,0 +1,66 @@
+{
+    "join": {
+        "msg": "**{name}** maakt verbinding met de server",
+        "update": "Time-outstatus van Discord controleren",
+        "deny": "Verbinding geweigerd voor **{name}**\n**Reason:** `Discord Time-out`\n**Expire:** {expire}",
+        "timeout": "⛔ Verbinding geweigerd\nTerwijl je een time-out hebt op onenigheid, kun je niet lid worden van onze server.\nVerloopt in `{expire}`"
+    },
+    "leave": {
+        "msg": "**{name}** heeft de server verlaten.\n**Reason:** `{reason}`"
+    },
+    "chat": {
+        "msg": "**{name}:** `{msg}`"
+    },
+    "resource": {
+        "start_msg": "**{resource}** is gestart.",
+        "stop_msg": "**{resource}** is gestopt."
+    },
+    "explosion": {
+        "msg": "**{name}** heeft een explosie veroorzaakt.\n**Type:** `{type}`"
+    },
+    "shooting": {
+        "msg": "**{name}** schoot een `{weapon}` `{count} keer`",
+        "undefined": "Undefined"
+    },
+    "damage": {
+        "msg": "**{name}** Is beschadigd door `{type}` en heeft `{health}` health verloren",
+        "type": {
+            "ai": "AI",
+            "ai_veh": "AI (Voertuig)",
+            "player": "{name}",
+            "player_veh": "{name} (Voertuig)",
+            "veh": "een Voertuig",
+            "obj": "een object",
+            "self": "zichzelf"
+        }
+    },
+    "nameChange": {
+        "msg": "**Naamswijziging gedetecteerd**\n`{old_name}` :arrow_right: `{new_name}`",
+        "game_msg": "Naamswijziging gedetecteerd `{old_name}` -> `{new_name}`"
+    },
+    "death": {
+        "suicide": {
+            "weapon": "**{name}** `zelfmoord gepleegd` (*{type}* - *{weapon}*)",
+            "event": "**{name}** `zelfmoord gepleegd` (*{type}*)",
+            "player": "**{name}** `zelfmoord gepleegd`"
+        },
+        "ai": {
+            "weapon": "**{name}** is `{type}` (*{weapon}*) door **AI**",
+            "event": "**{name}** is `{type}` door **AI**",
+            "other": "**{name}** is `Killed` door **AI**"
+        },
+        "player": {
+            "weapon": "**{name}** is `{type}` (*{weapon}*) door **{killer}**",
+            "event": "**{name}** is `{type}` door **{killer}**",
+            "other": "**{name}** is `Killed` door **{killer}**"
+        },
+        "unknown": {
+            "weapon": "**{name}** is `{type}` (*{weapon}*) door **Onbekend**",
+            "event": "**{name}** is `{type}` door **Onbekend**",
+            "other": "**{name}** is `Killed` door **Onbekend**"
+        }
+    },
+    "permission": {
+        "msg": "Machtigingen/groepen toegevoegd aan **{name}**"
+    }
+}
