@@ -1,0 +1,101 @@
+{
+  "newInstall": false,
+  "all": {
+    "channelId": "",
+    "color": "#A1A1A1",
+    "embed": true
+  },
+  "system": {
+    "channelId": "",
+    "icon": "🧾",
+    "color": "#A1A1A1",
+    "embed": true
+  },
+  "imageStore": {
+    "channelId": "",
+    "webhookID": "",
+    "webhookToken": ""
+  },
+  "chat": {
+    "channelId": "",
+    "icon": "💬",
+    "color": "#A1A1A1",
+    "logHistory": true,
+    "embed": true
+  },
+  "join": {
+    "channelId": "",
+    "icon": "📥",
+    "color": "#3AF241",
+    "logHistory": true,
+    "embed": true
+  },
+  "leave": {
+    "channelId": "",
+    "icon": "📤",
+    "color": "#F23A3A",
+    "logHistory": true,
+    "embed": true
+  },
+  "death": {
+    "channelId": "",
+    "icon": "💀",
+    "color": "#000000",
+    "logHistory": true,
+    "embed": true
+  },
+  "shooting": {
+    "channelId": "",
+    "icon": "🔫",
+    "color": "#2E66F2",
+    "logHistory": false,
+    "embed": true
+  },
+  "resource": {
+    "channelId": "",
+    "icon": "🔧",
+    "color": "#EBEE3F",
+    "logHistory": true,
+    "embed": true
+  },
+  "nameChange": {
+    "channelId": "",
+    "icon": "💠",
+    "color": "#03FC98",
+    "logHistory": true,
+    "embed": true
+  },
+  "explosion": {
+    "channelId": "",
+    "icon": "🧨",
+    "color": "#03FC98",
+    "logHistory": true,
+    "embed": true
+  },
+  "permission": {
+    "channelId": "",
+    "icon": "🔒",
+    "color": "#03FC98",
+    "logHistory": true,
+    "embed": true
+  },
+  "screenshot": {
+    "channelId": "",
+    "icon": "📸",
+    "color": "#A1A1A1",
+    "logHistory": false,
+    "embed": true
+  },
+  "txAdmin": {
+    "channelId": "",
+    "icon": "💻",
+    "color": "#FFFFFF",
+    "embed": true
+  },
+  "damage": {
+    "channelId": "",
+    "icon": "🩸",
+    "color": "#FF0000",
+    "embed": true
+  }
+}
