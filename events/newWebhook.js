@@ -5,7 +5,7 @@ module.exports = {
 	once: true,
 	async execute() {
         try {
-            const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+            const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
             if(channels['imageStore'].channelId == ''){ return }
             const c = await client.channels.cache.get(channels['imageStore'].channelId);
             const guild = c.guild;
@@ -24,7 +24,7 @@ module.exports = {
             })
 
             const newChannels = JSON.stringify(channels, null, 2)
-            SaveResourceFile(GetCurrentResourceName(), '/config/channels.json', newChannels);
+            SaveResourceFile(GetCurrentResourceName(), '/configs/channels.json', newChannels);
             if(client.config.WebhookResetMessage){
                 await c.send({embeds: [new MessageEmbed().setTitle(`🧹・Webhook for Image store has been Reset!`)]})
             }

@@ -14,13 +14,13 @@ ServerFunc.CreateLog = function(data)
 	end
 
     if data.screenshot then --[[ this log requires a screenshot to be made so we will transfer to client to grab a screenshot. ]]
-        local channelsLoadFile = LoadResourceFile(GetCurrentResourceName(), "./config/channels.json")
+        local channelsLoadFile = LoadResourceFile(GetCurrentResourceName(), "./configs/channels.json")
         local theFile = json.decode(channelsLoadFile)
         data.url = theFile.imageStore.webhookID.."/"..theFile.imageStore.webhookToken
         return TriggerClientEvent('Prefech:JD_logsV3:ClientCreateScreenshot', data.player_id, data)
     end
     if data.screenshot_2 then --[[ this log requires a second screenshot to be made so we will transfer to client to grab a screenshot. ]]
-        local channelsLoadFile = LoadResourceFile(GetCurrentResourceName(), "./config/channels.json")
+        local channelsLoadFile = LoadResourceFile(GetCurrentResourceName(), "./configs/channels.json")
         local theFile = json.decode(channelsLoadFile)
         data.url = theFile.imageStore.webhookID.."/"..theFile.imageStore.webhookToken
         return TriggerClientEvent('Prefech:JD_logsV3:ClientCreateScreenshot', data.player_2_id, data)

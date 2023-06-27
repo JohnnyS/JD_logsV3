@@ -1,6 +1,6 @@
-local configRawFile = LoadResourceFile(GetCurrentResourceName(), "./config/config.json")
+local configRawFile = LoadResourceFile(GetCurrentResourceName(), "./configs/config.json")
 Config = json.decode(configRawFile)
-local channelRawFile = LoadResourceFile(GetCurrentResourceName(), "./config/channels.json")
+local channelRawFile = LoadResourceFile(GetCurrentResourceName(), "./configs/channels.json")
 Channels = json.decode(channelRawFile)
 if Config ~= nil then
 	local langFile = LoadResourceFile(GetCurrentResourceName(), "./lang/" .. Config.language .. ".json")

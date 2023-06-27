@@ -7,7 +7,7 @@ module.exports = {
 			message.react("✅");
 			const tUser = await message.guild.members.cache.get(author.id);
 			if(!tUser.permissions.has("ADMINISTRATOR")) return message.reply({content: "⛔ | Missing Permissions to use this command.\nNeeded permission flag: `ADMINISTRATOR`"})
-			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
 			await channel.send('**Starting JD_logs Setup!**\n*ETA: 30 seconds*').then(msg => {
 				response = msg
 			})
@@ -281,7 +281,7 @@ module.exports = {
 			setTimeout(() => {
 				channels['newInstall'] = false
 				const newChannels = JSON.stringify(channels, null, 2)
-				SaveResourceFile(GetCurrentResourceName(), '/config/channels.json', newChannels);
+				SaveResourceFile(GetCurrentResourceName(), '/configs/channels.json', newChannels);
 				response.edit(`**Your Channels:**\n${ids}`)
 			}, 30000);
 		}

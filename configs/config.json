@@ -1,0 +1,57 @@
+{
+    "prefix":"!jdlogs ",
+    "token": "",
+    "guildId": "",
+    "TimezoneOffset": "+01:00",
+    "language": "en",
+
+    "NameChangePerms": "jd.staff",
+    "screenshotPerms": "jd.staff",
+
+    "allLogs": true,
+    "CheckTimeout": false,
+    "UseDiscordAcePerms": false,
+
+    "weaponLog": true,
+    "damageLog": true,
+    "deathLog": true,
+
+    "playerId": true,
+    "postals": true,
+    "playerHealth": true,
+    "playerArmor": true,
+    "playerPing": true,
+
+    "ip": true,
+    "steamUrl": true,
+    "discordId": {
+        "enabled": true,
+        "spoiler": true
+    },
+    "steamId": {
+        "enabled": true,
+        "spoiler": true
+    },
+    "license": {
+        "enabled": true,
+        "spoiler": true
+    },
+
+    "WebhookResetMessage": false,
+
+    "WeaponsNotLogged": [
+        "WEAPON_SNOWBALL",
+        "WEAPON_FIREEXTINGUISHER",
+        "WEAPON_PETROLCAN"
+    ],
+    "ExplosionsNotLogged": [],
+
+    "DiscordAcePerms": {
+        "DISCORD_ROLE_ID": {
+            "groups": ["group.superadmin", "group.admin", "group.mod", "group._dev"],
+            "perms": ["jd.staff"]
+        }
+    },
+
+    "maxListeners": 20
+}

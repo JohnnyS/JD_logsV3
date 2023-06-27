@@ -5,8 +5,8 @@ const { promisify } = require("util");
 const globPromise = promisify(glob);
 
 try {
-    config = require("./config/config.json");
-    channels = require("./config/channels.json");
+    config = require("./configs/config.json");
+    channels = require("./configs/channels.json");
 } catch {}
 
 const permissionCheck = ["MANAGE_CHANNELS", "SEND_MESSAGES", "VIEW_CHANNEL", "MANAGE_WEBHOOKS"]

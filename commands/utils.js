@@ -30,7 +30,7 @@ module.exports = {
             message.react("✅");
             const tUser = await message.guild.members.cache.get(author.id);
 			if(!tUser.permissions.has("ADMINISTRATOR")) return message.reply({content: "⛔ | Missing Permissions to use this command.\nNeeded permission flag: `ADMINISTRATOR`"})
-            const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+            const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
             const args = content.split(" ")
             if(!channels['imageStore']){
                 return channel.send(`Please use \`${client.config.prefix}setup\` first.`)
@@ -51,13 +51,13 @@ module.exports = {
             })
 
             const newChannels = JSON.stringify(channels, null, 2)
-            SaveResourceFile(GetCurrentResourceName(), '/config/channels.json', newChannels);
+            SaveResourceFile(GetCurrentResourceName(), '/configs/channels.json', newChannels);
             channel.send(`Webhook for Image store has been reset!\n**If you set a webhook then the bot will delete the old one.**`)
 		}
 
 		if(content.toLowerCase().startsWith(`${client.config.prefix}uninstall`)){
 			message.react("✅");
-			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
 			for (const [key, value] of Object.entries(channels)) {
 				let channel = await client.channels.cache.get(value.channelId);
 				try{
@@ -87,7 +87,7 @@ module.exports = {
             message.react("✅");
             const tUser = await message.guild.members.cache.get(author.id);
 			if(!tUser.permissions.has("ADMINISTRATOR")) return message.reply({content: "⛔ | Missing Permissions to use this command.\nNeeded permission flag: `ADMINISTRATOR`"})
-            const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+            const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
             const args = content.split(" ")
             message.delete()
 
@@ -102,21 +102,21 @@ module.exports = {
                 return channel.send(`⛔ **|** Could not delete channel <#${dc.id}}> for \`${args[2]}\``);
             }
             const newChannels = JSON.stringify(channels)
-            SaveResourceFile(GetCurrentResourceName(), '/config/channels.json', newChannels);
+            SaveResourceFile(GetCurrentResourceName(), '/configs/channels.json', newChannels);
 		}
 
 		if(content.toLowerCase().startsWith(`${client.config.prefix}embed`)){
 			message.react("✅");
 			const tUser = await message.guild.members.cache.get(author.id);
 			if(!tUser.permissions.has("ADMINISTRATOR")) return message.reply({content: "⛔ | Missing Permissions to use this command.\nNeeded permission flag: `ADMINISTRATOR`"})
-			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
 			const args = content.split(" ");
 			if(args[2] == null || args[2] == undefined) return message.reply({content: "⛔ | You need to specify a channel.\nExample: `!embed chat`"})
 			channels[args[2]].embed = !channels[args[2]].embed
 			let state = 'Disabled'
 			if(!channels[args[2]].noEmbed) state = 'Enabled'
 			const newChannels = JSON.stringify(channels)
-			SaveResourceFile(GetCurrentResourceName(), '/config/channels.json', newChannels);
+			SaveResourceFile(GetCurrentResourceName(), '/configs/channels.json', newChannels);
 			channel.send({content:`✅ **|** Channel embeds have been \`${state}\`\n*Resource reload is required before changes can take effect.*`})
 		}
 	},

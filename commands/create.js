@@ -6,7 +6,7 @@ module.exports = {
 		if(content.toLowerCase().startsWith(`${client.config.prefix}create`)){
 			const tUser = await message.guild.members.cache.get(author.id);
 			if(!tUser.permissions.has("ADMINISTRATOR")) return message.reply({content: "⛔ | Missing Permissions to use this command.\nNeeded permission flag: `ADMINISTRATOR`"})
-			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/config/channels.json'));
+			const channels = JSON.parse(LoadResourceFile(GetCurrentResourceName(), '/configs/channels.json'));
 			newChannel = {}
 			message.delete()
 			channels[newChannel.name] = {
@@ -63,7 +63,7 @@ module.exports = {
 			setTimeout(() => {
 				if(nc){
 					const newChannels = JSON.stringify(channels)
-					SaveResourceFile(GetCurrentResourceName(), '/config/channels.json', newChannels);
+					SaveResourceFile(GetCurrentResourceName(), '/configs/channels.json', newChannels);
 					let embed = new MessageEmbed()
 						.setTimestamp()
 						.setDescription(`**Details:**\n\n**Export Channel:** \`${newChannel.name}\`\n**Discord Channel Name:** \`#・${newChannel.name}-logs\` - \`${channels[newChannel.name].channelId}\`\n**Message Icon:** ${newChannel.icon}\n**Embed Color:** \`${newChannel.color}\``)
