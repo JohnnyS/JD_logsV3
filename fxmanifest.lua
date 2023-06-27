@@ -13,7 +13,7 @@
 ]]
 
 
-version '3.1.3'
+version '3.1.4'
 author 'Prefech'
 description 'FXServer logs to Discord (https://prefech.com/)'
 repository 'https://github.com/prefech/JD_logsV3'

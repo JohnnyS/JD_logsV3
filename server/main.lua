@@ -174,6 +174,9 @@ end)
 
 RegisterServerEvent('Prefech:JD_logsV3:playerShotWeapon') --[[ Shooting logs. ]]
 AddEventHandler('Prefech:JD_logsV3:playerShotWeapon', function(weapon, count)
+	if not weapon then
+		print('^1Error:^0 A weapon was fired, however this weapon is not in' .. GetCurrentResourceName() .. '/client/clientTables.lua. ^1' .. GetPlayerName(source) .. ' Fired this weapon^0')
+	end
 	if Config.weaponLog then
 		ServerFunc.CreateLog({EmbedMessage = lang.shooting.msg:gsub("{name}", GetPlayerName(source)):gsub("{weapon}", weapon):gsub("{count}", count), player_id = source, channel = 'shooting'})
     end
@@ -287,34 +290,9 @@ AddEventHandler("Prefech:JD_logsV3:ScreenshotCB", function(args)
 	ServerFunc.CreateLog(args)
 end)
 
-CreateThread(function() --[[ System Messages. ]]
-    while true do
-        PerformHttpRequest('https://api.prefech.dev/v1/fivem/jdlogs/systemMsg', function(code, res, headers)
-            if code == 200 then
-				local rv = json.decode(res)
-				if rv.item.id then
-					if os.time(os.date("!*t")) - tonumber(rv.item.date) < (7 * 24 * 60 * 60) then
-						if GetResourceKvpString('JD_logs:SystemMessage') ~= rv.item.message then
-							print('^1JD_logs System Message\n^1--------------------^0\n^2'..rv.item.title..'^0\n'..rv.item.message..'\n^1--------------------^0')
-							ServerFunc.CreateLog({ EmbedMessage = '**'..rv.item.title..'**\n'..rv.item.message, channel = 'system'})
-						end
-					end
-					SetResourceKvp("JD_logs:SystemMessageId", ''..rv.item.id..'')
-					SetResourceKvp("JD_logs:SystemMessage", ''..rv.item.message..'')
-				end
-            end
-        end, 'GET', nil, {
-            ['Token'] = 'JD_logsV3',
-			['Last'] = GetResourceKvpString('JD_logs:SystemMessageId')
-        })
-        Wait(15 * 60 * 1000)
-    end
-end)
-
 CreateThread( function() --[[ Version Checker ]]
 	local version = GetResourceMetadata(GetCurrentResourceName(), 'version')
-	SetConvarServerInfo("JD_logs", "V"..version)
-	PerformHttpRequest('https://raw.githubusercontent.com/Prefech/JD_logsV3/master/json/version.json', function(code, res, headers)
+	PerformHttpRequest('https://raw.githubusercontent.com/JohnnyS/JD_logsV3/master/json/version.json', function(code, res, headers)
 		if code == 200 then
 			local rv = json.decode(res)
 			if tonumber(table.concat(mysplit(rv.version, "."))) > tonumber(table.concat(mysplit(version, "."))) then
@@ -323,7 +301,7 @@ CreateThread( function() --[[ Version Checker ]]
 UPDATE: %s AVAILABLE
 CHANGELOG: %s
 -------------------------------------------------------^0]]):format(rv.version, rv.changelog))
-				ServerFunc.CreateLog({ EmbedMessage = "**JD_logsV3 Update V"..rv.version.."**\nDownload the latest update of JD_logsV3 here:\nhttps://github.com/prefech/JD_logsV3/\n\n**Changelog:**\n"..rv.changelog..'\n\n**How to update?**\n1. Download the latest version.\n2. Replace all files with your old once **EXCEPT THE CONFIG** folder.\n3. run the `!jdlogs setup` command again and you\'re done.', channel = 'system'})
+				ServerFunc.CreateLog({ EmbedMessage = "**JD_logsV3 Update V"..rv.version.."**\nDownload the latest update of JD_logsV3 here:\nhttps://github.com/JohnnyS/JD_logsV3/\n\n**Changelog:**\n"..rv.changelog..'\n\n**How to update?**\n1. Download the latest version.\n2. Replace all files with your old once **EXCEPT THE CONFIG** folder.\n3. run the `!jdlogs setup` command again and you\'re done.', channel = 'system'})
 			end
 		end
 	end, 'GET')

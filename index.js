@@ -60,7 +60,7 @@ process.on('unhandledRejection', error => {
 	console.log(error);
 });
 
-process.setMaxListeners(20);
+process.setMaxListeners(config.maxListeners);
 
 try {
     client.config = config;
